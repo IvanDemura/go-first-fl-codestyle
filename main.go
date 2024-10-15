@@ -25,15 +25,14 @@ func attack(charName, charClass string) string {
 func defence(charName, charClass string) string {
 	if charClass == "warrior" {
 		return fmt.Sprintf("%s блокировал %d урона.", charName, 10+randint(5, 10))
-	} 
+	}
 	if charClass == "mage" {
 		return fmt.Sprintf("%s блокировал %d урона.", charName, 10+randint(-2, 2))
 	}
 	if charClass == "healer" {
 		return fmt.Sprintf("%s блокировал %d урона.", charName, 10+randint(2, 5))
 	}
-		return "неизвестный класс персонажа"
-	}
+	return "неизвестный класс персонажа"
 }
 
 // обратите внимание на "if else" и на "else"
@@ -47,8 +46,7 @@ func special(charName, charClass string) string {
 	if charClass == "healer" {
 		return fmt.Sprintf("%s применил специальное умение `Защита %d`", charName, 10+30)
 	}
-		return "неизвестный класс персонажа"
-	}
+	return "неизвестный класс персонажа"
 }
 
 // здесь обратите внимание на имена параметров
@@ -75,18 +73,18 @@ func startTraining(charName, charClass string) string {
 	for cmd != "skip" {
 		fmt.Print("Введи команду: ")
 		fmt.Scanf("%s\n", &cmd)
-        switch {
-        case cmd == "attack":
-            fmt.Println(attack(charName, charClass))
-        case cmd == "defence":
-            fmt.Println(defence(charName, charClass))
-        case cmd == "special":
-            fmt.Println(special(charName, charClass))
-        default:
-            fmt.Println("неизвестная команда")
-        }
-    }
-    return "тренировка окончена"
+		switch {
+		case cmd == "attack":
+			fmt.Println(attack(charName, charClass))
+		case cmd == "defence":
+			fmt.Println(defence(charName, charClass))
+		case cmd == "special":
+			fmt.Println(special(charName, charClass))
+		default:
+			fmt.Println("неизвестная команда")
+		}
+	}
+	return "тренировка окончена"
 }
 
 // обратите внимание на имя функции и имена переменных
@@ -129,7 +127,7 @@ func main() {
 
 	charClass := choiseCharClass()
 
-	fmt.Println(start_training(charName, charClass))
+	fmt.Println(startTraining(charName, charClass))
 }
 
 func randint(min, max int) int {
